@@ -1,0 +1,6 @@
+﻿[
+    {
+        "location": "DNS Resolver",
+        "action": "NXDOMAIN: missing.example not found"
+    }
+]

@@ -1,0 +1,23 @@
+{
+  "ingress_router": "Edge-Router",
+  "dns": [
+    {"type": "A", "name": "blocked.example", "value": "10.1.5.12"},
+    {"type": "CNAME", "name": "alias.example", "value": "blocked.example"},
+    {"type": "A", "name": "deep.example", "value": "10.2.10.15"}
+  ],
+  "routes": [
+    {"dest": "10.1.5.0/24", "next_hop": null, "interface": "LOCAL", "router": "Core-Router"},
+    {"dest": "10.0.0.0/8", "next_hop": "10.0.1.2", "interface": "eth1", "router": "Edge-Router"},
+    {"dest": "0.0.0.0/0", "next_hop": "10.254.1.1", "interface": "eth0", "router": "Edge-Router"},
+    {"dest": "10.2.10.0/24", "next_hop": null, "interface": "LOCAL", "router": "Core-Router"}
+  ],
+  "firewalls": {
+    "Edge-Router": [
+      {"action": "deny", "protocol": "TCP", "src": "0.0.0.0/0", "dst_port": "80"}
+    ],
+    "Core-Router": [
+      {"action": "deny", "protocol": "TCP", "src": "0.0.0.0/0", "dst_port": "80"},
+      {"action": "allow", "protocol": "TCP", "src": "10.0.0.0/8", "dst_port": "80-90"}
+    ]
+  }
+}

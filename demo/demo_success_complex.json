@@ -1,0 +1,19 @@
+[
+    {
+        "location": "DNS Resolver",
+        "action": "Resolved deep.example -> 10.2.10.15"
+    },
+    {
+        "location": "Core-Router",
+        "action": "Routing lookup matched 10.2.10.0/24 -> next_hop=None via LOCAL",
+        "ttl": 5
+    },
+    {
+        "location": "Core-Router",
+        "action": "Allowed by rule #2: Allowed by rule #2"
+    },
+    {
+        "location": "Host",
+        "action": "Delivered to 10.2.10.15:85"
+    }
+]

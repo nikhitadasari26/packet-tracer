@@ -1,0 +1,15 @@
+﻿[
+    {
+        "location": "DNS Resolver",
+        "action": "Resolved example.com -> 10.0.5.12"
+    },
+    {
+        "location": "Router-B",
+        "action": "Routing lookup matched 10.0.5.0/24 -> next_hop=None via LOCAL",
+        "ttl": 0
+    },
+    {
+        "location": "Router-B",
+        "action": "Time to Live exceeded"
+    }
+]

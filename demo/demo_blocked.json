@@ -1,0 +1,15 @@
+[
+    {
+        "location": "DNS Resolver",
+        "action": "Resolved blocked.example -> 10.1.5.12"
+    },
+    {
+        "location": "Core-Router",
+        "action": "Routing lookup matched 10.1.5.0/24 -> next_hop=None via LOCAL",
+        "ttl": 4
+    },
+    {
+        "location": "Core-Router",
+        "action": "Blocked by rule #1: Blocked by rule #1"
+    }
+]

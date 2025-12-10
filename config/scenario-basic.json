@@ -1,0 +1,19 @@
+{
+  "ingress_router": "Router-A",
+  "dns": [
+    {"type": "A", "name": "example.com", "value": "10.0.5.12"},
+    {"type": "A", "name": "web.local", "value": "10.0.5.13"}
+  ],
+  "routes": [
+    {"dest": "0.0.0.0/0", "next_hop": "10.0.1.1", "interface": "eth0", "router": "Router-A"},
+    {"dest": "10.0.5.0/24", "next_hop": null, "interface": "LOCAL", "router": "Router-B"}
+  ],
+  "firewalls": {
+    "Router-A": [
+      {"action": "allow", "protocol": "TCP", "src": "192.168.2.0/24", "dst_port": "80"}
+    ],
+    "Router-B": []
+  }
+}
+
+
